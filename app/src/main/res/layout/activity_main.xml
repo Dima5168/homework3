@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FDFCF7"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/kotyata" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="ПЛЕЕР"
+        android:textColor="#D13E70"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textOut"
+        android:layout_width="380dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        android:background="#BF9CA8"
+        android:gravity="center"
+        android:hint="Название мелодии"
+        android:textColor="#D13E70"
+        android:textColorHint="#D13E70"
+        android:textSize="19sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textOut">
+
+        <Button
+            android:id="@+id/btnResume"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#D13E70"
+            android:padding="14dp"
+            android:layout_marginRight="40dp"
+            android:layout_gravity="center_horizontal|right"
+            android:textSize="12sp"
+            android:onClick="onClick"
+            android:text="ВОСПРОИЗВЕСТИ" />
+
+        <Button
+            android:id="@+id/btnPause"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#D13E70"
+            android:padding="14dp"
+            android:layout_marginRight="40dp"
+            android:layout_gravity="center_horizontal|right"
+            android:onClick="onClick"
+            android:text="ПАУЗА" />
+
+        <Button
+            android:id="@+id/btnStop"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#D13E70"
+            android:padding="14dp"
+            android:layout_marginRight="40dp"
+            android:layout_gravity="center_horizontal|right"
+            android:onClick="onClick"
+            android:text="СТОП" />
+
+        <Button
+            android:id="@+id/btnForward"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|right"
+            android:layout_marginRight="40dp"
+            android:backgroundTint="#D13E70"
+            android:onClick="onClick"
+            android:padding="14dp"
+            android:text="ВПЕРЁД" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|right"
+            android:layout_marginRight="40dp"
+            android:backgroundTint="#D13E70"
+            android:onClick="onClick"
+            android:padding="14dp"
+            android:text="НАЗАД" />
+
+        <Switch
+            android:id="@+id/switchLoop"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="#D13E70"
+            android:padding="14dp"
+            android:text="ПОВТОР"
+            android:textColor="#BF9CA8"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="ИСТОЧНИК"
+        android:textColor="#FFFFFF"
+        android:textSize="19sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="380dp"
+        android:layout_height="101dp"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <Button
+            android:id="@+id/btnStream"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#D13E70"
+            android:onClick="onClickSource"
+            android:text="Интернет"
+            android:textColor="#BF9CA8"
+            android:textSize="14sp"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/btnRAW"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:backgroundTint="#D13E70"
+            android:onClick="onClickSource"
+            android:text="Приложение"
+            android:textColor="#BF9CA8"
+
+            android:textSize="14sp"
+            android:textStyle="italic" />
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
